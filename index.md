@@ -47,12 +47,11 @@
                                 </div>
                                 <div class="select-form">
                                     <div class="select-itms">
-                                        <select name="select" id="select1">
-                                            <option value="">In where?</option>
-                                            <option value="">Catagories One</option>
-                                            <option value="">Catagories Two</option>
-                                            <option value="">Catagories Three</option>
-                                            <option value="">Catagories Four</option>
+                                        <select name="select" id="select">
+                                            <option value="all">Genre</option>
+                                            <option value="series">Série</option>
+                                            <option value="movie">Film</option>
+                                            <option value="episode">Episode</option>
                                         </select>
                                     </div>
                                 </div>
@@ -78,13 +77,16 @@
                         </div>
                     </div>
                 </div>
-                <!-- Button trigger modal -->
                 
                 <!-- Modal -->
-                <div class="modal" id="movieModal" tabindex="-1"></div>
+                <div class="modal" id="movieModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"></div>
 
-                <div class="row section"></div>
+                <div class="row section">
+                    <h4 class="mx-auto mb-5 text-muted">Vous cherchez un film ou une série ? Entrez des mots clés dans la barre de recherche !</h4>
+                    <img src="https://842930.smushcdn.com/1760858/wp-content/uploads/2020/03/afterclap-20-searching.png?lossy=1&strip=1&webp=1"/>
+                </div>
             </div>
+            <div class="buttonMore"></div>
         </div>
         
     <!-- Scroll Up -->
@@ -94,7 +96,7 @@
 
     <!-- JS here -->
     <script src="index.js"></script>
-
+    <script src="apikey.js"></script>
     <!-- Jquery, Popper, Bootstrap -->
     <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
 
