@@ -1,3 +1,4 @@
+const apiKey = prompt("Entrez votre clé api:");
 const searchBar = document.getElementById('search');
 const select = document.getElementById('select');
 let page;
