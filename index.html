@@ -1,24 +1,114 @@
-<!DOCTYPE html>
-<html>
-  <head>
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>MovieSearcher</title>
+    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="">
-  </head>
-  <body>
-    <form action="#" class="search-box mb-100">
-      <div class="input-form">
-          <input id="search" type="text" placeholder="Rechercher un film">
-      </div>
-      <div class="search-form">
-        <button onclick='searchMovies()'><i class="ti-search"></i> Search</button>
-      </div>
-    </form>
+    <link rel="shortcut icon" type="image/x-icon" href="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn1.iconfinder.com%2Fdata%2Ficons%2Fmusic-media-2%2F512%2F614731-cinema-512.png&f=1&nofb=1">
 
-    <section></section>
+    <!-- CSS here -->
+    <link rel="stylesheet" href="assets/css/main.css">
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+	<link rel="stylesheet" href="assets/css/nice-select.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- ? Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn1.iconfinder.com%2Fdata%2Ficons%2Fmusic-media-2%2F512%2F614731-cinema-512.png&f=1&nofb=1" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <!--? Hero Area Start-->
+        <div class="slider-area hero-overly" style="background-image: url(https://images.unsplash.com/photo-1478720568477-152d9b164e26?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);">
+            <div class="single-slider hero-overly  slider-height1 d-flex align-items-center">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-10 col-lg-10">
+                            <!-- Hero Caption -->
+                            <div class="hero__caption pt-100">
+                                <h1>Explore nos nombreux films et séries</h1>
+                                <p>Retrouve tes coups de coeur parmi notre catalogue.</p>
+                            </div>
+                            <!--Hero form -->
+                            <form action="#" class="search-box mb-100">
+                                <div class="input-form">
+                                    <input type="text" id="search" placeholder="Rechercher un film ou une série">
+                                </div>
+                                <div class="select-form">
+                                    <div class="select-itms">
+                                        <select name="select" id="select1">
+                                            <option value="">In where?</option>
+                                            <option value="">Catagories One</option>
+                                            <option value="">Catagories Two</option>
+                                            <option value="">Catagories Three</option>
+                                            <option value="">Catagories Four</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="search-form">
+                                    <a href="#movies" onclick="searchMovies()">Search</a>
+                                </div>	
+                            </form>	
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Hero Area End-->
+        <!--? Popular Locations Start 01-->
+        <div class="popular-location border-bottom section-padding40">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- Section Tittle -->
+                        <div class="section-tittle text-center mb-80" id="movies">
+                            <h2>Nos oeuvres</h2>
+                            <p>Naviguez parmi nos chefs-d'oeuvres, et trouvez votre bonheur.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Button trigger modal -->
+                
+                <!-- Modal -->
+                <div class="modal" id="movieModal" tabindex="-1"></div>
+
+                <div class="row section"></div>
+            </div>
+        </div>
+        
+    <!-- Scroll Up -->
+    <div id="back-top" >
+        <a title="Remonter en haut de la page" href="#"> <i class="fas fa-level-up-alt"></i></a>
+    </div>
+
+    <!-- JS here -->
+    <script src="index.js"></script>
+
+    <!-- Jquery, Popper, Bootstrap -->
+    <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+
+    <!-- Jquery Slick , Owl-Carousel Plugins -->
+    <script src="./assets/js/slick.min.js"></script>
+
+    <!-- Nice-select, sticky -->
+    <script src="./assets/js/jquery.nice-select.min.js"></script>
     
-    <script src="index.js" ></script>
-  </body>
+    <!-- Jquery Plugins, main Jquery -->	
+    <script src="./assets/js/main.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
 </html>
