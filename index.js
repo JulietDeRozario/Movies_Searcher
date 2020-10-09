@@ -17,9 +17,9 @@ const getMovies = (stringSearch, type) => {
   section.innerHTML = "";
   let url;
   if(type === "all"){
-    url = `http://www.omdbapi.com/?s=${stringSearch}&apikey=${apiKey}`;
+    url = `https://www.omdbapi.com/?s=${stringSearch}&apikey=${apiKey}`;
   }else if (type === "series" || type === "episode" || type === "movie"){
-    url = `http://www.omdbapi.com/?s=${stringSearch}&type=${type}&apikey=${apiKey}`;
+    url = `https://www.omdbapi.com/?s=${stringSearch}&type=${type}&apikey=${apiKey}`;
   }
   fetch(url)
     .then((response) => response.json())
@@ -68,7 +68,7 @@ const setImage = (url) => {
 
 // Get the plot of the movie to add it in the modal
 const reloadModal = (id) => {
-  fetch(`http://www.omdbapi.com/?i=${id}&apikey=7f27ece4`)
+  fetch(`https://www.omdbapi.com/?i=${id}&apikey=7f27ece4`)
     .then((response) => response.json())
     .then((data) => openModal(data))
     .catch((error) => console.error(`error: ${error}`))
@@ -110,7 +110,7 @@ const openModal = (movie) => {
 // Load more movies from the same keywords at the end of the page
 const loadMoreMovies = (stringSearch) => {
   page += 1; 
-  fetch(`http://www.omdbapi.com/?s=${stringSearch}&page=${page}&apikey=7f27ece4`)
+  fetch(`https://www.omdbapi.com/?s=${stringSearch}&page=${page}&apikey=7f27ece4`)
     .then((response) => response.json())
     .then((data) => reloadMovies(data['Search']))
     .catch((error) => console.error(`error: ${error}`))
