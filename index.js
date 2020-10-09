@@ -37,7 +37,8 @@ const reloadMovies = (movies, stringSearch) => {
     `;
   }else{
     movies.forEach(movie => {
-      let image = setImage(movie['Poster']);
+      let image = movie['Poster'];
+      if(image == "N/A"){image = "https://images.unsplash.com/photo-1560109947-543149eceb16?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80"}
       section.innerHTML += `
       <div class="col-lg-4 col-md-6 col-sm-6 fade-in">
         <div class="single-location mb-30">
@@ -60,12 +61,6 @@ const reloadMovies = (movies, stringSearch) => {
   createInspector();
 }
 
-// Get a default image if the movie doesn't have a poster
-const setImage = (url) => {
-  if(url == "NA"){url = "https://images.unsplash.com/photo-1560109947-543149eceb16?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80"}
-  return url;
-}
-
 // Get the plot of the movie to add it in the modal
 const reloadModal = (id) => {
   fetch(`https://www.omdbapi.com/?i=${id}&apikey=7f27ece4`)
@@ -77,7 +72,8 @@ const reloadModal = (id) => {
 // Update the modal innerHTML with new informations
 const openModal = (movie) => {
   const modal = document.getElementById('movieModal');
-  let image = setImage(movie['Poster']);
+      let image = movie['Poster'];
+      if(image == "N/A"){image = "https://images.unsplash.com/photo-1560109947-543149eceb16?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80"}
   modal.innerHTML =`
   <div class="modal-dialog modal-dialog-scrollable" role="document">
     <div class="modal-content">
